@@ -1,12 +1,11 @@
 {
   "name": "apollo-server-mongodb-boilerplate",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "nodemon src/server"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["MongoDB", "ApolloServer", "GraphQL"],
   "license": "ISC",
   "dependencies": {
     "apollo-server-express": "^3.3.0",
@@ -21,14 +20,5 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.13"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/SaadFarhanIdress/apollo-server-express-mongodb-boilerplate.git"
-  },
-  "bugs": {
-    "url": "https://github.com/SaadFarhanIdress/apollo-server-express-mongodb-boilerplate/issues"
-  },
-  "homepage": "https://github.com/SaadFarhanIdress/apollo-server-express-mongodb-boilerplate#readme",
-  "description": ""
+  }
 }
