@@ -8,7 +8,7 @@ const resolvers = {
         getPost: async (_, args) => {
             try {
                 const { postId } = args;
-                return await post.find({ _id: postId });
+                return await post.findOne({ _id: postId });
             } catch (error) {
                 throw new Error(error);
             }
@@ -27,12 +27,14 @@ const resolvers = {
                 const { postInput } = args;
 
                 const newPost = new post(postInput);
-                const post = await newPost.save();
+
+                const postToBeSave = await newPost.save();
+                
                 pubsub.publish('NEW_POST', {
-                    newPost: post
+                    newPost: postToBeSave
                 });
 
-                return post;
+                return createdPost;
             } catch (error) {
                 throw new Error(error);
             }
