@@ -9,7 +9,7 @@
 Select a boilerplate and follow the attached README to get started:
  - ```minimal``` Contains a single query and mutation operation.
  - ```basic``` Basic boilerplate contains two query operations and one mutation operation.
- - ```advanced``` Advanced boilerplate which contains many operations. Contains user authentication using [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken), password hashing [bcrypt](https://www.npmjs.com/package/bcrypt), real time subscription. 
+ - ```advanced``` Advanced boilerplate which contains many operations. Contains user authentication using [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken), password hashing [bcrypt](https://www.npmjs.com/package/bcrypt), real time subscription. **(Not Ready)**
 
 # Learning Resources
 - [Road to GraphQL by Robin Wieruch](https://www.pdfdrive.com/the-road-to-learn-react-e126679589.html) 
