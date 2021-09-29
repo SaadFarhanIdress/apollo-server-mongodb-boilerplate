@@ -1,8 +1,5 @@
 const post = require('../../db/models')
 
-const { PubSub } = require("graphql-subscriptions");
-const pubsub = new PubSub();
-
 const resolvers = {
     Query: {
         getPost: async (_, args) => {
@@ -30,11 +27,7 @@ const resolvers = {
 
                 const postToBeSave = await newPost.save();
                 
-                pubsub.publish('NEW_POST', {
-                    newPost: postToBeSave
-                });
-
-                return createdPost;
+                return postToBeSave;
             } catch (error) {
                 throw new Error(error);
             }
@@ -56,11 +49,6 @@ const resolvers = {
             } catch (error) {
                 throw new Error(error);
             }
-        }
-    },
-    Subscription: {
-        newPost: {
-            subscribe: () => pubsub.asyncIterator('NEW_POST')
         }
     }
 }

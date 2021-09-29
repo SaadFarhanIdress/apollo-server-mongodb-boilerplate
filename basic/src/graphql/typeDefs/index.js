@@ -1,7 +1,6 @@
 const { gql } = require("apollo-server-express");
 
 const typeDefs = gql`
-    
     type Post {
         _id: ID!
         title: String!
@@ -28,10 +27,6 @@ const typeDefs = gql`
         createPost(postInput: PostInput): Post
         updatePost(postId: ID!, postInput: PostInput): message
         deletePost(postId: ID!): message
-    }
-
-    type Subscription { 
-        newPost: Post!
     }
 `;
 
