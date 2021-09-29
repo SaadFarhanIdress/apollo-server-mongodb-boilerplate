@@ -1,0 +1,23 @@
+{
+  "name": "apollo-server-mongodb-boilerplate",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon src/server"
+  },
+  "keywords": [
+    "MongoDB",
+    "ApolloServer",
+    "GraphQL"
+  ],
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server": "^3.3.0",
+    "colors": "^1.4.0",
+    "mongoose": "^6.0.8",
+    "nodemon": "^2.0.13"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.13"
+  }
+}
