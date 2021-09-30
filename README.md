@@ -4,7 +4,7 @@
 </div>
 
 
-# Quickstart
+# Getting Started
 
 Select a boilerplate and follow the attached README to get started:
  - ```minimal``` Contains a single query and mutation operation.
