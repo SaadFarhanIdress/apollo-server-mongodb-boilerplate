@@ -1,4 +1,4 @@
-<div align="center"><a href="https://graphql.org"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/GraphQL_Logo.svg/2048px-GraphQL_Logo.svg.png" width="150" /></a><a href="https://mongodb.com"><img src="https://cdn.iconscout.com/icon/free/png-256/mongodb-3629612-3032310.png" width="150" /></a> <a href="https://www.apollographql.com/"><img src="https://iconape.com/wp-content/files/ke/21383/svg/apollo-graphql-compact.svg" width="150" /></a>
+<div align="center"><a href="https://graphql.org"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/GraphQL_Logo.svg/2048px-GraphQL_Logo.svg.png" width="100" /></a><a href="https://mongodb.com"><img src="https://cdn.iconscout.com/icon/free/png-256/mongodb-3629612-3032310.png" width="100" /></a> <a href="https://www.apollographql.com/"><img src="https://iconape.com/wp-content/files/ke/21383/svg/apollo-graphql-compact.svg" width="100" /></a>
 <br /> <h1>Apollo Server MongoDB Basic Boilerplate</h1></div>
 
 ## Features 
