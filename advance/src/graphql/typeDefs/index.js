@@ -3,7 +3,6 @@ const { gql } = require("apollo-server-express");
 const typeDefs = gql`
     
     input PostInput {
-        author: String!
         authorId: String
         title: String!
         body: String!
@@ -22,10 +21,9 @@ const typeDefs = gql`
 
     type Post {
         _id: ID
-        title: String
-        body: String
-        published: Boolean
-        author: String
+        title: String!
+        body: String!
+        published: Boolean!
         authorId: String
         postedAt: String
     }
