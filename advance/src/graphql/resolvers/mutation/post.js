@@ -4,7 +4,7 @@ const { pubsub } = require('../../../server');
 
 const postMutations = {
     async draftPost(_, { postInput }, context) {
-        const { title, body, author, published } = postInput;
+        const { title, body, published } = postInput;
 
         const userId = getUserId(context);
 
@@ -12,7 +12,6 @@ const postMutations = {
             title,
             body,
             authorId: userId,
-            author,
             published
         });
 
