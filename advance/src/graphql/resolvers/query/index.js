@@ -15,7 +15,8 @@ module.exports = {
             try {
                 const id = getUserId(context);
                 const draftPosts = post.find({
-                    author: id
+                    authorId: id,
+                    published: false
                 });
                 return draftPosts;
             }
