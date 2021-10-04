@@ -3,8 +3,7 @@ const mongoose = require('mongoose');
 const postSchema = new mongoose.Schema({
     title: { type: String },
     body: { type: String },
-    author: { type: String },
-    authorId: { type: String },
+    authorId: { type: mongoose.Schema.Types.ObjectId, ref: 'users' },
     published: { type: Boolean },
     postedAt: { type: String, default: Date.now }
 });
