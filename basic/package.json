@@ -16,9 +16,9 @@
     "colors": "^1.4.0",
     "graphql": "^15.6.0",
     "mongoose": "^6.0.13",
-    "nodemon": "^2.0.13"
+    "nodemon": "^2.0.15"
   },
   "devDependencies": {
-    "nodemon": "^2.0.13"
+    "nodemon": "^2.0.15"
   }
 }
