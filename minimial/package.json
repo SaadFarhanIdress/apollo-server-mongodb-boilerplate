@@ -14,8 +14,8 @@
   "dependencies": {
     "apollo-server": "^3.5.0",
     "colors": "^1.4.0",
-    "graphql": "^15.6.0",
-    "mongoose": "^6.0.13",
+    "graphql": "^16.0.1",
+    "mongoose": "^6.0.8",
     "nodemon": "^2.0.13"
   },
   "devDependencies": {
