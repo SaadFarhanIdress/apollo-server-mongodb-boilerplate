@@ -11,12 +11,12 @@ module.exports = {
                 throw new Error(error);
             }
         },
-        async drafts(_, args, context) {
+        async drafts(_, __, context) {
             try {
                 const id = getUserId(context);
                 const draftPosts = post.find({
-                    authorId: id,
-                    published: false
+                    published: false,
+                    'author.$.authorId': id
                 });
                 return draftPosts;
             }
@@ -24,7 +24,7 @@ module.exports = {
                 throw new Error(error);
             }
         },
-        async me(_, args, context) {
+        async me(_, __, context) {
             try {
                 const id = getUserId(context);
                 const info = user.findOne({ _id: id });
@@ -43,8 +43,8 @@ module.exports = {
         },
         async getPost(_, args) {
             try {
-                const {postId} = args;
-                const foundPost = await post.findOne({_id: postId});
+                const { postId } = args;
+                const foundPost = await post.findOne({ _id: postId });
                 return foundPost;
             } catch (error) {
                 throw new Error(error);

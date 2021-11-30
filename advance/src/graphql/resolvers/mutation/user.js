@@ -11,7 +11,7 @@ const userMutations = {
             email: args.email,
             password: hashedPassword
         })
-        const {email, password, name, _id} = await newUser.save();
+        const { email, password, name, _id } = await newUser.save();
         return {
             token: jwt.sign({ userId: _id }, SECRETS.APP_SECRET),
             user: {

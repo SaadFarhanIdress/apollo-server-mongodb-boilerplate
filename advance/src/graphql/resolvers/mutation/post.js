@@ -1,22 +1,25 @@
 const { getUserId } = require('../../../utils');
-const { post } = require('../../../db/models');
+const { post, user } = require('../../../db/models');
 const { pubsub } = require('../../../server');
 
 const postMutations = {
     async draftPost(_, { postInput }, context) {
-        const { title, body, published } = postInput;
+        const { author, title, body, published } = postInput;
 
         const userId = getUserId(context);
-
         const postInfo = new post({
             title,
             body,
-            authorId: userId,
+            author: [
+                { authorId: userId },
+                { authorName: author }
+            ],
             published
         });
-
         const createdPost = await postInfo.save();
+
         pubsub.publish('TRIGGER_NEW_POST', { feedSubscription: createdPost });
+
         return createdPost;
 
     },
@@ -24,12 +27,13 @@ const postMutations = {
 
         const userId = getUserId(context);
 
-        const postExists = await post.findOne({ authorId: userId });
+        const postExists = await post.findOne({ 'author.$.authorId': userId });
         if (!postExists) {
             throw new Error('Post not found or you are not the author!');
         };
 
         await post.updateOne({ _id: postId }, { published: true });
+
         return { confirmationMessage: `Post of ${postId} has been published.` };
 
     },
@@ -37,7 +41,7 @@ const postMutations = {
 
         const userId = getUserId(context);
 
-        const postExists = await post.remove({ _id: postId, authorId: userId });
+        const postExists = await post.remove({ _id: postId, 'author.$.authorId': userId });
         if (!postExists) {
             throw new Error('Post not found or you are not the author');
         }
@@ -45,13 +49,13 @@ const postMutations = {
         return { confirmationMessage: `Post of ID ${postId} has been deleted.` };
     },
     updatePost: async (_, args) => {
-        try {
-            const { postId, postInput } = args;
-            await post.updateOne({ _id: postId }, postInput);
-            return { confirmationMessage: `Post of ID ${postId} has been updated.` };
-        } catch (error) {
-            throw new Error(error);
+        const { postId, postInput } = args;
+        const userId = getUserId(context);
+        const postExists = await post.updateOne({ _id: postId, 'author.$.authorId': userId }, postInput);
+        if (!postExists) {
+            throw new Error('Post not found or you are not the author');
         }
+        return { confirmationMessage: `Post of ID ${postId} has been updated.` };
     }
 };
 

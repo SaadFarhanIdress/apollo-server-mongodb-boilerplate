@@ -24,7 +24,7 @@ const typeDefs = gql`
         title: String!
         body: String!
         published: Boolean!
-        authorId: String
+        author: User!
         postedAt: String
     }
 
@@ -33,6 +33,7 @@ const typeDefs = gql`
         email: String!
         name: String!
         password: String!
+        posts: [Post!]!
     }
 
     type message {
