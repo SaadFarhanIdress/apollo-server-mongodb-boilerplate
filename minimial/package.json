@@ -12,13 +12,13 @@
   ],
   "license": "ISC",
   "dependencies": {
-    "apollo-server": "^3.3.0",
+    "apollo-server": "^3.5.0",
     "colors": "^1.4.0",
     "graphql": "^15.6.0",
-    "mongoose": "^6.0.8",
-    "nodemon": "^2.0.13"
+    "mongoose": "^6.0.13",
+    "nodemon": "^2.0.15"
   },
   "devDependencies": {
-    "nodemon": "^2.0.13"
+    "nodemon": "^2.0.15"
   }
 }
