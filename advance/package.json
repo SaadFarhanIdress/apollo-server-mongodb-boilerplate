@@ -16,7 +16,7 @@
         "graphql": "^15.7.2",
         "graphql-subscriptions": "^1.2.1",
         "jsonwebtoken": "^8.5.1",
-        "mongoose": "^6.0.13",
+        "mongoose": "^6.1.2",
         "nodemon": "^2.0.15",
         "subscriptions-transport-ws": "^0.10.0"
     },
