@@ -49,6 +49,3 @@ npm start
 | `　　　　└── typeDefs` (_directory_) | Contains graphQL schema. |
 | `　　├── config_prod.js` | Defines environment variables. (_This is a template, rename the file to config.js and paste your DB URL in it._ ) |
 | `　　└── server.js` | The entry point for your GraphQL server |
-
-### Countributing
-If you found any errors or you can help creating test files for it. Then fork this repo, create a branch, commit files push it to the branch and then open a pull request. 
