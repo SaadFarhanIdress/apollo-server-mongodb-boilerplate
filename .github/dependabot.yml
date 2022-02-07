@@ -3,12 +3,12 @@ updates:
   - package-ecosystem: "npm"
     directory: "/advance"
     schedule:
-      interval: "weekly"
+      interval: "monthly"
   - package-ecosystem: "npm"
     directory: "/basic"
     schedule:
-      interval: "weekly"
+      interval: "monthly"
   - package-ecosystem: "npm"
     directory: "/minimial"
     schedule:
-      interval: "weekly"
+      interval: "monthly"
